@@ -44,8 +44,12 @@
     <main>
         <div class="card">
             <h2>Cadastrar um novo aluno</h2>
-            <div class="card-body">
+            <form class="card-body">
                 <div class="input-group mb-3">
+                    <div id="divisao_usuario" class="divisao">
+                        <img class="card-img-top" src="images/usuario.png" alt="">
+                        <input type="file" id="flImage" name="foto" accept="image/*">
+                    </div>
                     <div class="divisao">
                         <label for="nome_sala">Nome</label>
                         <input type="text" class="form-control" name="nome_aluno" aria-label="Sizing example input"
@@ -70,12 +74,11 @@
                             <option value="3">Mecatrônica</option>
                         </select>
                     </div>
-
                     <div class="divisao">
                         <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Cadastrar">
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 </body>
