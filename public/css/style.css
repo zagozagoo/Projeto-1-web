@@ -9,6 +9,12 @@
     width: 150px;
 }
 
+.RGB_Controle {
+    background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(135, 14, 255), rgb(1, 124, 255));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .opcoes_salas {
     margin-top: 20px;
     margin-right: 20px;
