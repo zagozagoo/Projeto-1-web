@@ -18,7 +18,7 @@
     <header>
         <nav class="shadow-lg navbar navbar-expand-lg bg-body-tertiary top" style="background-color: #e3f2fd;">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><strong class="RGB_Controle">Controle</strong> de Estudantes</a>
+                <a class="navbar-brand" href="/"><strong class="RGB_Controle">Controle</strong> de Estudantes</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -32,10 +32,10 @@
                         <strong>Cadastrar: </strong>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aluno.html">Alunos</a>
+                        <a class="nav-link" href="/aluno">Alunos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="sala.html">Sala</a>
+                        <a class="nav-link" href="/sala">Sala</a>
                     </li>
                 </ul>
             </div>
@@ -44,16 +44,16 @@
     <main>
         <div class="card">
             <h2>Cadastrar uma nova sala</h2>
-            <div class="card-body">
+            <form action="/sala" method="post" class="card-body">
                 <div class="input-group mb-3">
                     <div class="divisao">
-                        <label for="nome_sala">Nome</label>
-                        <input type="text" class="form-control" name="nome_sala" aria-label="Sizing example input"
+                        <label for="sala">Nome</label>
+                        <input type="text" class="form-control" name="sala" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="divisao">
-                        <label for="capacidade_sala">Capacidade</label>
-                        <input type="text" class="form-control" name="capacidade_sala" aria-label="Sizing example input"
+                        <label for="capacidade">Capacidade</label>
+                        <input type="text" class="form-control" name="capacidade" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
 
@@ -61,7 +61,7 @@
                         <input class="btn btn-primary" type="submit" name="submit" id="submit" value="Cadastrar">
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </main>
 </body>
