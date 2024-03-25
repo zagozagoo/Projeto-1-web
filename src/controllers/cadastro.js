@@ -17,8 +17,7 @@ module.exports = {
         res.redirect('/');
     },
 
-    async aluno(req, res)
-    {
+    async aluno(req, res) {
         // Encontrando todas as salas disponíveis no SQL
         const salas = await sala.findAll({
             raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
@@ -26,6 +25,23 @@ module.exports = {
         });
 
         // Renderizando e passando o nome das salas para o front
-        res.render('../views/cadastroAluno', { salas });
+        res.render('../views/aluno', { salas });
+    },
+
+    async alunoInsert(req, res) {
+        // Recebendo as informações pelo Body
+        const dados = req.body;
+        // Nome padrão da foto
+        let foto = 'usuario.png';
+        // Criando aluno no banco de dados
+        await aluno.create({
+            Nome: dados.nome,
+            Idade: dados.idade,
+            Sexo: dados.sexo,
+            IDSala: dados.sala,
+            Foto: foto
+        });
+        // Redirecionar para a página principal
+        res.redirect('/');
     }
 }

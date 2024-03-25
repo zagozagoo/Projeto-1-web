@@ -44,42 +44,29 @@
     <main>
         <div class="opcoes_salas">
             <span class="span_salas">Salas de Aula: </span>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>TI</option>
-                <option value="1">TI</option>
-                <option value="2">Manufatura</option>
-                <option value="3">Mecatrônica</option>
-            </select>
+            <form action="/", method="post">
+                <select class="form-select" onchange="this.form.submit()" name="id">
+                    <option value="padrao" <%= (selecionado == "padrao") ? "selected" : "" %>>Selecionar</option>
+                    <% for (let i=0; i < salas.length; i++) { %>
+                        <option value="<%= salas[i].IDSala %>" <%= (selecionado == salas[i].IDSala) ? "selected" : "" %>>
+                            <%= salas[i].Nome %>
+                        </option>
+                    <% } %>
+                </select>
+            </form>
         </div>
         <h1>Alunos</h1>
         <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="images/jellyfish.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">JellyFish</h5>
-                    <p class="card-text"> Idade: 10</p>
-                    <a href="#" class="btn btn-primary">Editar</a>
+            <% for (let i=0; i < alunos.length; i++) { %>
+                <div class="card" style="width: 18rem;">
+                    <img src="images/<%= alunos[i].Foto %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= alunos[i].Nome %></h5>
+                        <p class="card-text"> Idade: <%= alunos[i].Idade %></p>
+                        <a href="#" class="btn btn-primary">Editar</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="images/star.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Star</h5>
-                    <p class="card-text">Idade: 5</p>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem;">
-                <img src="images/octopus.webp" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Octopus</h5>
-                    <p class="card-text">Idade: 40</p>
-                    <a href="#" class="btn btn-primary">Editar</a>
-                </div>
-            </div>
-
+            <% } %>
         </div>
     </main>
 </body>

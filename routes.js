@@ -9,8 +9,10 @@ const editar = require('./src/controllers/editar');
 
 // Iniciando as rotas
 route.get('/', home.pagInicialGet);
+route.post('/', home.pagInicialPost);
 
-route.get('/aluno', home.pagAluno);
+route.get('/aluno', cadastro.aluno);
+route.post('/insertaluno', cadastro.alunoInsert);
 
 route.get('/sala', home.pagSala);
 route.post('/sala', cadastro.salaInsert);

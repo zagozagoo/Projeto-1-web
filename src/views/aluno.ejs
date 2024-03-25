@@ -44,7 +44,8 @@
     <main>
         <div class="card">
             <h2>Cadastrar um novo aluno</h2>
-            <form class="card-body">
+            <!-- acabei de adicionar o  enctype, não teho certeza se esta certo-->
+            <form action="/insertaluno" method="post" class="card-body" enctype="multipart/form-data"> 
                 <div class="input-group mb-3">
                     <div id="divisao_usuario" class="divisao">
                         <img class="card-img-top" id="imgFoto" src="images/usuario.png" alt="">
@@ -52,26 +53,25 @@
                     </div>
                     <div class="divisao">
                         <label for="nome_sala">Nome</label>
-                        <input type="text" class="form-control" name="nome_aluno" aria-label="Sizing example input"
+                        <input type="text" class="form-control" name="nome" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="divisao">
                         <label for="idade_aluno">Idade</label>
-                        <input type="text" class="form-control" name="idade_aluno" aria-label="Sizing example input"
+                        <input type="text" class="form-control" name="idade" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="divisao">
                         <label for="sexo_aluno">Sexo</label>
-                        <input type="text" class="form-control" name="sexo_aluno" aria-label="Sizing example input"
+                        <input type="text" class="form-control" name="sexo" aria-label="Sizing example input"
                             aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="divisao">
                         <label for="sala_aluno">Sala</label>
-                        <select class="form-select" name="sala_aluno" aria-label="Default select example">
-                            <option selected>TI</option>
-                            <option value="1">TI</option>
-                            <option value="2">Manufatura</option>
-                            <option value="3">Mecatrônica</option>
+                        <select class="form-select" name="sala" aria-label="Default select example">
+                            <% for (let i=0; i < salas.length; i++) { %>
+                                <option value='<%= salas[i].IDSala %>'><%= salas[i].Nome %></option>
+                            <% } %>
                         </select>
                     </div>
                     <div class="divisao">
